@@ -6,6 +6,7 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/ApacheRocketMQ?style=social)](https://twitter.com/intent/follow?screen_name=ApacheRocketMQ)
 ## 快速开始
 RocketMQ-Dashboard V1.0.1 版本
+当前配置: 关闭写入日志文件, 统计驾驶的error错误改为warn警告(如不需要可改成debug),前端默认展示中文
 
 ### 使用 Docker 安装部署
 
