@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-FROM java:8
+FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/eclipse-temurin:8-jdk-alpine
 VOLUME /tmp
 ADD rocketmq-dashboard-*.jar rocketmq-dashboard.jar
 RUN sh -c 'touch /rocketmq-dashboard.jar'

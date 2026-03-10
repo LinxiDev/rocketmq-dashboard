@@ -22,7 +22,7 @@
             <div class="modal-header">
                 <h4 class="modal-title">{{'WELCOME' | translate}}</h4>
             </div>
-            <form class="form-horizontal form-bordered form-row-stripped" id="loginForm">
+            <form class="form-horizontal form-bordered form-row-stripped" id="loginForm" ng-submit="login()">
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
@@ -38,7 +38,9 @@
                                 <div class="col-md-5">
                                     <input type="password" name="password" id="password"
                                            value="" placeholder="{{'PASSWORD' | translate}}"
-                                           class="form-control" />
+                                           class="form-control"
+                                           ng-keypress="$event.keyCode === 13 && login()"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -55,5 +57,12 @@
 <script>
 $(function(){
 	 //$("#loginModal").modal("hide");
+    // 回车触发登录
+    $("#loginForm").on("keypress", function(e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            angular.element(document.getElementById("loginForm")).scope().login();
+        }
+    });
 })
 </script>
