@@ -16,7 +16,6 @@
  */
 package org.apache.rocketmq.dashboard;
 
-import org.apache.rocketmq.client.log.ClientLogger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
