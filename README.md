@@ -33,7 +33,7 @@ docker pull rocketmq-dashboard:latest
 * 运行（请自行修改 namesrvAddr 和端口）
 
 ```bash
-docker run -e "-Dserver.port=8080 -Drocketmq.config.namesrv_addr=172.16.16.164:30008;172.16.16.165:30008;172.16.16.166:30008 -Drocketmq.config.accessKey=rmqadmin -Drocketmq.config.secretKey=8oBB@6uTWG5nc -Drocketmq.config.loginRequired=true" -p 8080:8080 -t rocketmq-dashboard:latest
+docker run -e "-Dserver.port=8080 -Drocketmq.config.namesrvAddrs=172.16.16.164:30008;172.16.16.165:30008;172.16.16.166:30008 -Drocketmq.config.accessKey=rmqadmin -Drocketmq.config.secretKey=8oBB@6uTWG5nc -Drocketmq.config.loginRequired=true" -p 8080:8080 -t rocketmq-dashboard:latest
 ```
 ```yaml
 version: '3'
@@ -43,7 +43,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - JAVA_OPTS=-Xms1g -Xmx1g -Drocketmq.config.namesrv_addr=172.16.16.164:30008;172.16.16.165:30008;172.16.16.166:30008 -Drocketmq.config.accessKey=rmqadmin -Drocketmq.config.secretKey=8oBB@6uTWG5nc -Drocketmq.config.loginRequired=true
+      - JAVA_OPTS=-Xms1g -Xmx1g -Drocketmq.config.namesrvAddrs=172.16.16.164:30008;172.16.16.165:30008;172.16.16.166:30008 -Drocketmq.config.accessKey=rmqadmin -Drocketmq.config.secretKey=8oBB@6uTWG5nc -Drocketmq.config.loginRequired=true
 ```
 
 ### 直接使用 Java 运行或部署
