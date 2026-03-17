@@ -5,6 +5,21 @@ on:
     tags:
       - 'v*'  # 匹配 v1.0.0 这样的标签触发发布
 
+  workflow_dispatch:  # 添加手动触发
+    inputs:
+      version:
+        description: 'V1.0.1-Test'
+        required: false
+        default: ''
+      skip_tests:
+        description: '是否跳过测试'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
 permissions:
   contents: write  # 允许创建 Release 和上传文件
 
